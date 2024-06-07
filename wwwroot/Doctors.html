@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hospitals</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Doctors</h1>
+    <h3>Add Doctor</h3>
+    <div id="addDoctor">
+        <form action="javascript:void(0);" method="POST"
+              onsubmit="addDoctor()">
+            <input type="text" id="add-name" placeholder="Name">
+            <input type="text" id="add-secondname" placeholder="Second name">
+            <input type="text" id="add-post" placeholder="Post">
+            <input type="text" id="add-info" placeholder="Information about new doctor">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div id="editDoctor">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);"
+              onsubmit="updateDoctor()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-secondname">
+            <input type="text" id="edit-post">
+            <input type="text" id="edit-info">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" arialabel="Close">&#10006;</a>
+        </form>
+    </div>
+    <p id="counter"></p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Second name</th>
+            <th>Post</th>
+            <th>Info</th>
+        </tr>
+        <tbody id="doctors"></tbody>
+    </table>
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getDoctors();
+    </script>
+</body>
+</html>
+
